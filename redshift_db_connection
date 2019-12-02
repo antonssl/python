@@ -1,0 +1,16 @@
+import psycopg2
+
+host = "mytestprd.xxxxxxxxxxx.ap-southeast-1.redshift.amazonaws.com"
+port = 5439
+database = "mytestdb"
+user_name = "mytestuser"
+password = "XXXX"
+
+conn = psycopg2.connect(dbname=database, user=user_name, password=password, port=port, host=host)
+cur = conn.cursor()
+
+cur.execute("delete from public.test_tbl")
+cur.execute("call stored_proc_test()")
+conn.commit()
+
+
