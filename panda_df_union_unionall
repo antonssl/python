@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+ 
+#Create a DataFrame
+df1 = {
+    'Subject':['semester1','semester2','semester3','semester4','semester1',
+               'semester2','semester3'],
+   'Score':[62,47,55,74,31,77,85]}
+ 
+df2 = {
+    'Subject':['semester1','semester2','semester3','semester4'],
+   'Score':[90,47,85,74]}
+ 
+ 
+df1 = pd.DataFrame(df1,columns=['Subject','Score'])
+df2 = pd.DataFrame(df2,columns=['Subject','Score'])
+ 
+print(df1)
+print(df2)
+
+
+#union all
+df_union_all= pd.concat([df1, df2])
+print(df_union_all)
+
+#union in pandas
+df_union= pd.concat([df1, df2]).drop_duplicates()
+print(df_union)
+
+
