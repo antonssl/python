@@ -1,0 +1,35 @@
+import pandas as pd
+
+# Create a DataFrame
+df1 = {
+    'Name': ['George', 'Andrea', 'micheal', 'maggie', 'Ravi', 'Xien', 'Jalpa'],
+    'State': ['Arizona', 'Georgia', 'Newyork', 'Indiana', 'Florida', 'California', 'Texas'],
+    'Gender': ["M", "F", "M", "F", "M", "M", "F"],
+    'Score': [63, 48, 56, 75, 32, 77, 85],
+
+}
+df1 = pd.DataFrame(df1, columns=['Name', 'State', 'Gender', 'Score'])
+print(df1)
+
+transposed_df = df1.T
+print(transposed_df)
+
+
+
+
+
+##         Name       State Gender  Score
+##   0   George     Arizona      M     63
+##   1   Andrea     Georgia      F     48
+##   2  micheal     Newyork      M     56
+##   3   maggie     Indiana      F     75
+##   4     Ravi     Florida      M     32
+##   5     Xien  California      M     77
+##   6    Jalpa       Texas      F     85
+
+
+##                 0        1        2        3        4           5      6
+##   Name     George   Andrea  micheal   maggie     Ravi        Xien  Jalpa
+##   State   Arizona  Georgia  Newyork  Indiana  Florida  California  Texas
+##   Gender        M        F        M        F        M           M      F
+##   Score        63       48       56       75       32          77     85
