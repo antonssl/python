@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame
+df1 = {
+    'Name': ['George', 'Andrea', 'micheal', 'maggie', 'Ravi', 'Xien', 'Jalpa'],
+    'Mathematics1_score': [62, 47, 55, 74, 32, 77, 86],
+    'Mathematics2_score': [45, 78, 44, 89, 66, 49, 72]}
+
+df1 = pd.DataFrame(df1, columns=['Name', 'Mathematics1_score', 'Mathematics2_score'])
+
+print(df1)
+
+df1['Score_diff']=df1['Mathematics1_score'] - df1['Mathematics2_score']
+print(df1)
+
+
+# Output:
+#       Name  Mathematics1_score  Mathematics2_score
+# 0   George                  62                  45
+# 1   Andrea                  47                  78
+# 2  micheal                  55                  44
+# 3   maggie                  74                  89
+# 4     Ravi                  32                  66
+# 5     Xien                  77                  49
+# 6    Jalpa                  86                  72
+
+#       Name  Mathematics1_score  Mathematics2_score  Score_diff
+# 0   George                  62                  45          17
+# 1   Andrea                  47                  78         -31
+# 2  micheal                  55                  44          11
+# 3   maggie                  74                  89         -15
+# 4     Ravi                  32                  66         -34
+# 5     Xien                  77                  49          28
+# 6    Jalpa                  86                  72          14
